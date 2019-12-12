@@ -1,5 +1,6 @@
 #ifndef dice_h
 #define dice_h
+
 class Dice
 {
 public:

@@ -127,7 +127,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Dice.cpp" />
-    <ClCompile Include="Dice.h" />
+    <ClCompile Include="Dice.h">
+      <FileType>CppHeader</FileType>
+    </ClCompile>
     <ClCompile Include="MonopolyApp.cpp" />
     <ClCompile Include="Player.cpp" />
   </ItemGroup>
