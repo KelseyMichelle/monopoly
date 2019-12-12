@@ -1,6 +1,6 @@
 #include <string>
 #include <vector>
-
+#include "Space.h"
 
 #ifndef PLAYER_H
 #define PLAYER_H
@@ -14,7 +14,7 @@ protected:
 	int bank;
 	int position;
 	//std::array<Card, 10> inventory;
-	//std::vector<Square> properties;
+	std::vector<Space> properties;
 	bool inJail = false;
 public:
 	void takeTurn();
