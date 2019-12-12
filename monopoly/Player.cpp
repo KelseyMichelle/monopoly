@@ -5,7 +5,14 @@ using namespace std;
 
 void Player::takeTurn()
 {
+	if (!inJail)
+	{
 
+	}
+	else
+	{
+		tryEscapeJail();
+	}
 }
 
 void Player::putInJail()
