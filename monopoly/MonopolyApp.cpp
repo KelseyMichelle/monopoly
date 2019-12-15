@@ -28,5 +28,21 @@ int main()
 	array<array<InfoSquare, 3>, 3>* infoPtr = &infoSquares;
 	Board b1{ &board, &p1, infoPtr };
 	b1.printBoard();
+	string response;
+
+	while (response != "q")
+	{
+		cout << "what do you wanna do? (f/b): ";
+		cin >> response;
+		if (response == "f")
+		{
+			p1[0].setPos(p1[0].getPos() + 1);
+		} else if (response == "b")
+		{
+			p1[0].setPos(p1[0].getPos() - 1);
+		}
+		cout << "\033[2J\033[1;1H";
+		b1.printBoard();
+	}
 
 }
