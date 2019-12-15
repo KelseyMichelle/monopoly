@@ -121,6 +121,7 @@ std::string Space::lineSix()
 
 void Space::setNames(string name)
 {
+	cout << name;
 	if (name.find(" ") == string::npos)
 	{
 		topName = name;
@@ -129,10 +130,9 @@ void Space::setNames(string name)
 	else
 	{
 		topName = this->name.substr(0, this->name.find(" "));
-		bottomName = this->name.substr(this->name.length() - this->name.find(" "), this->name.length() - this->name.find(" ") - 1);
+		bottomName = this->name.substr(this->name.length() - this->name.find(" "), this->name.length() - this->topName.find(" ") - 1);
 		
 	}
-
 
 	int topLen = topName.length();
 	int bottomLen = bottomName.length();
