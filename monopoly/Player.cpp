@@ -1,4 +1,5 @@
 #include "Player.h"
+#include <iostream>
 //spaghetti
 
 using namespace std;
@@ -23,8 +24,11 @@ Player::Player()
 void Player::takeTurn()
 {
 	//only take turn normally if not in jail
+	string dice;
 	if (!inJail)
 	{
+		cout << "roll dice?: ";
+
 
 	}
 	else

@@ -30,6 +30,9 @@
     <ClInclude Include="InfoSquare.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="GetInput.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Player.cpp">
@@ -48,6 +51,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="InfoSquare.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GetInput.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

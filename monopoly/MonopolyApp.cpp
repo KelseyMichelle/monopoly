@@ -5,6 +5,7 @@
 #include <array>
 #include "Board.h"
 #include "InfoSquare.h"
+#include "GetInput.h"
 
 using namespace std;
 
@@ -20,7 +21,8 @@ int main()
 
 	Space s1{"hubertsssssss sdfasdfsfsdfasdfsffsa", p1Ptr, 0};
 	array<Space, 40> board;
-
+	int cat = GetInput().getInt("pelase enter iasdnf: ");
+	cout << cat;
 	for (int x{ 0 }; x < 40;x++)
 	{
 		Space s2{ "space num" + to_string(x), p1Ptr, x };
