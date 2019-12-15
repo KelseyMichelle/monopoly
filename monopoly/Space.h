@@ -9,13 +9,13 @@
 class Space
 {
 public:
-	Space(std::string name, std::array<Player*, 6>* players, int position);
+	Space(std::string name, std::array<Player, 6>* players, int position);
 	Space();
 	std:: string printTile(int line);
 protected:
 	int position;
 	std::string name;
-	std::array<Player*, 6> players;
+	std::array<Player, 6>* players;
 	std::string lineOne();
 	std::string lineTwo();
 	std::string lineThree();
