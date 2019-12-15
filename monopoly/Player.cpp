@@ -3,6 +3,7 @@
 
 using namespace std;
 
+//create player object
 Player::Player(std::string name, std::string icon, int position)
 {
 	this->name = name;
@@ -10,7 +11,7 @@ Player::Player(std::string name, std::string icon, int position)
 	this->position = position;
 	defaultSpace = false;
 }
-
+//default constructor
 Player::Player()
 {
 	this->name = "default";
@@ -18,9 +19,10 @@ Player::Player()
 	this->position = 0;
 	this->defaultSpace = true;
 }
-
+//go through turn
 void Player::takeTurn()
 {
+	//only take turn normally if not in jail
 	if (!inJail)
 	{
 
@@ -31,8 +33,10 @@ void Player::takeTurn()
 	}
 }
 
+
 void Player::putInJail()
 {
+
 }
 
 bool Player::tryEscapeJail()

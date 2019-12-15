@@ -13,7 +13,7 @@ Board::Board(std::array<Space, 40>* spaces, std::array<Player, 6>* playersPtr, s
 
 void Board::printBoard()
 {
-	// spaces is a dereferenced spaces array, which is used to
+	// spaces is a dereferenced spacesPtr, which is used to
 	// get the individual lines that need to be printed
 	// while iterating through the board, printing in total
 	// 11 different tiles intitiall to finalize the top of the board
@@ -48,7 +48,7 @@ void Board::printBoard()
 
 		if (x == 0)
 		{
-			for (int i{ 0 }; i < 63; i++)
+			for (int i{ 0 }; i < 81; i++)
 			{
 				cout << "-";
 			}
@@ -63,7 +63,7 @@ void Board::printBoard()
 		cout << spaces[squareCounter + 11].getLine(x);
 		cout << endl;
 	}
-	for (int i{ 0 }; i < 77; i++)
+	for (int i{ 0 }; i < 100; i++)
 		{
 			cout << "-";
 		}

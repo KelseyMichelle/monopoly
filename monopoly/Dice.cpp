@@ -12,13 +12,13 @@ int Dice::rollDie(int& min, int& max)
 
 	return randomInt(engine);
 }
-
+//can take pointer ints or non-pointer ints
 int Dice::rollDie(int min, int max)
 {
 	uniform_int_distribution<unsigned int> randomInt(min, max);
 	return randomInt(engine);
 }
-
+//defaults to a D6 roll
 int Dice::rollDie()
 {
 	uniform_int_distribution<unsigned int> randomInt(1, 6);
