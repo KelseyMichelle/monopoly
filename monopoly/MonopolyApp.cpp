@@ -5,6 +5,7 @@
 #include <array>
 #include "Board.h"
 #include "InfoSquare.h"
+#include "GetInput.h"
 
 using namespace std;
 
@@ -15,13 +16,17 @@ int main()
 	array<Player, 6>* p1Ptr = &p1;
 	
 	Player newP{ "kels", "%" ,3};
+	Player newP2{ "charlz", "*" , 2};
 	p1[0] = newP;
+	GetInput().getString("choose option a-c: ", { "a", "b", "c" });
 	Space s1{"hubertsssssss sdfasdfsfsdfasdfsffsa", p1Ptr, 0};
 	array<Space, 40> board;
-
+	int cat = GetInput().getInt("pelase enter iasdnf: ");
+	cout << cat;
 	for (int x{ 0 }; x < 40;x++)
 	{
 		Space s2{ "space num" + to_string(x), p1Ptr, x };
+
 		board[x] = s2;
 	}
 	array<array<InfoSquare, 3>, 3> infoSquares;

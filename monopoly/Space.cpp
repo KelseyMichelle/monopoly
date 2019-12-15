@@ -124,12 +124,13 @@ void Space::setNames(string name)
 	if (name.find(" ") == string::npos)
 	{
 		topName = name;
-		bottomName = " ";
+		bottomName = "";
 	}
 	else
 	{
 		topName = this->name.substr(0, this->name.find(" "));
 		bottomName = this->name.substr(this->name.length() - this->name.find(" "), this->name.length() - this->name.find(" ") - 1);
+		
 	}
 
 
