@@ -29,20 +29,57 @@ int GetInput::getInt(std::string query)
 
 int GetInput::getInt(std::string query, int min, int max)
 {
-	return 0;
+	bool validInput = false;
+	int intResponse{ 0 };
+	while (!validInput)
+	{
+		intResponse = GetInput().getInt(query);
+		if (intResponse >= min&& intResponse <= max)
+		{
+			validInput = true;
+		}
+	}
+	return intResponse;
 }
 
-int GetInput::getString(std::string query)
+string GetInput::getString(std::string query)
 {
-	return 0;
+	cout << query;
+	string response{ "" };
+	cin >> response;
+	return response;
 }
 
-int GetInput::getString()
+string GetInput::getString()
 {
-	return 0;
+	return getString("please enter a string: ");
 }
 
-int GetInput::getString(std::string query, std::vector<std::string> options)
+string GetInput::getString(std::string query, std::vector<std::string> options)
 {
-	return 0;
+	bool validInput{ false };
+	string response{ "" };
+	while (!validInput)
+	{
+		response = GetInput().getString(query);
+
+		for (string& s : options)
+		{
+			if (response == s)
+			{
+				validInput = true;
+			}
+		}
+		if (!validInput)
+		{
+			cout << "invalid input, please enter one of the following: ";
+			for (string& s : options)
+			{
+				cout << s <<", ";
+			}
+			cout << endl;
+		}
+
+	}
+	return response;
 }

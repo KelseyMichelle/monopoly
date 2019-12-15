@@ -18,7 +18,7 @@ int main()
 	Player newP{ "kels", "%" ,3};
 	Player newP2{ "charlz", "*" , 2};
 	p1[0] = newP;
-
+	GetInput().getString("choose option a-c: ", { "a", "b", "c" });
 	Space s1{"hubertsssssss sdfasdfsfsdfasdfsffsa", p1Ptr, 0};
 	array<Space, 40> board;
 	int cat = GetInput().getInt("pelase enter iasdnf: ");
