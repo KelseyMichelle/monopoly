@@ -54,18 +54,18 @@ std::string Space::getLine(int line)
 
 std::string Space::lineOne()
 {
-	return "-------";
+	return "---------";
 }
 
 std::string Space::lineTwo()
 {
-	return "      |";
+	return "        |";
 }
 
 std::string Space::lineThree()
 {
 	string result{topName};
-	int spaceLeft = 6 - this->topName.length();
+	int spaceLeft = 8 - this->topName.length();
 	for (int i{ 0 }; i < spaceLeft; i++)
 	{
 		result += " ";
@@ -78,7 +78,7 @@ std::string Space::lineFour()
 {
 	
 	string result{ bottomName };
-	int spaceLeft = 6 - this->bottomName.length();
+	int spaceLeft = 8 - this->bottomName.length();
 	for (int i{ 0 }; i < spaceLeft; i++)
 	{
 		result += " ";
@@ -90,7 +90,7 @@ std::string Space::lineFour()
 std::string Space::lineFive()
 {
 	//checks if players are blank templates and whether they occupy the square
-	string result{ "" };
+	string result{ " " };
 	array<Player, 6> players1;
 	players1 = *players;
 	for (Player p : players1)
@@ -111,12 +111,12 @@ std::string Space::lineFive()
 			}
 		}
 	}
-	result += "|";
+	result += " |";
 	return result;
 }
 std::string Space::lineSix()
 {
-	return "------|";
+	return "--------|";
 }
 
 void Space::setNames(string name)
@@ -136,12 +136,12 @@ void Space::setNames(string name)
 	int topLen = topName.length();
 	int bottomLen = bottomName.length();
 
-	if (topLen > 6)
+	if (topLen > 8)
 	{
-		topName = topName.substr(0, 6);
+		topName = topName.substr(0, 8);
 	}
-	if (bottomLen > 6)
+	if (bottomLen > 8)
 	{
-		bottomName = bottomName.substr(0, 6);
+		bottomName = bottomName.substr(0, 8);
 	}
 }

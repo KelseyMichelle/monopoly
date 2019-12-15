@@ -22,19 +22,20 @@ std::string InfoSquare::getLine(int line)
 
 std::string InfoSquare::lineOne()
 {
-	return "                    |";
+	return "                          |";
 }
 
 std::string InfoSquare::lineTwo()
 {
-	return "                    |";
+	return "                          |";
 }
 
+//ideally this would read from a list of properties that belong to each player
 std::string InfoSquare::propertyLine(int line)
 {
 	if (line == 14)
 	{
-		return "--------------------|";
+		return "--------------------------|";
 	}
-	return "                    |";
+	return "                          |";
 }
