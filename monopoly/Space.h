@@ -11,7 +11,7 @@ class Space
 public:
 	Space(std::string name, std::array<Player, 6>* players, int position);
 	Space();
-	std:: string printTile(int line);
+	std::string getLine(int line);
 protected:
 	int position;
 	std::string name;

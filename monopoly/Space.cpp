@@ -20,15 +20,14 @@ Space::Space()
 	this->position = -1;
 }
 
-std::string Space::printTile(int line)
+std::string Space::getLine(int line)
 {
-	int currLine = line % 6;
+	int currLine = line % 5;
 	
 
 	if (currLine == 0)
 	{
 		return lineOne();
-
 	}
 	else if (currLine == 1)
 	{
@@ -130,7 +129,7 @@ void Space::setNames(string name)
 	else
 	{
 		topName = this->name.substr(0, this->name.find(" "));
-		bottomName = this->name.substr(this->name.length() - this->name.find(" ") + 1, this->name.length() - this->name.find(" ") - 1);
+		bottomName = this->name.substr(this->name.length() - this->name.find(" "), this->name.length() - this->name.find(" ") - 1);
 	}
 
 

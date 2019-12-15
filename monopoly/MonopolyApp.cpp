@@ -4,6 +4,7 @@
 #include "Space.h"
 #include <array>
 #include "Board.h"
+#include "InfoSquare.h"
 
 using namespace std;
 
@@ -15,15 +16,17 @@ int main()
 	
 	Player newP{ "kels", "%" ,3};
 	p1[0] = newP;
-	Space s1{"hubertsssssss", p1Ptr, 0};
+	Space s1{"hubertsssssss sdfasdfsfsdfasdfsffsa", p1Ptr, 0};
 	array<Space, 40> board;
-	
-	for (int x{ 0 }; x < 11;x++)
+
+	for (int x{ 0 }; x < 40;x++)
 	{
 		Space s2{ "space num" + to_string(x), p1Ptr, x };
 		board[x] = s2;
 	}
-	Board b1{ &board, &p1 };
+	array<array<InfoSquare, 3>, 3> infoSquares;
+	array<array<InfoSquare, 3>, 3>* infoPtr = &infoSquares;
+	Board b1{ &board, &p1, infoPtr };
 	b1.printBoard();
 
 }
