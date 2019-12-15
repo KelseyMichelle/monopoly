@@ -3,6 +3,22 @@
 
 using namespace std;
 
+Player::Player(std::string name, std::string icon, int position)
+{
+	this->name = name;
+	this->icon = icon;
+	this->position = position;
+	defaultSpace = false;
+}
+
+Player::Player()
+{
+	this->name = "default";
+	this->icon = "*";
+	this->position = 0;
+	this->defaultSpace = true;
+}
+
 void Player::takeTurn()
 {
 	if (!inJail)
@@ -27,4 +43,24 @@ bool Player::tryEscapeJail()
 int Player::getPosition()
 {
 	return this->position;
+}
+
+bool Player::isDefault()
+{
+	return this->defaultSpace;
+}
+
+string Player::getIcon()
+{
+	return this->icon;
+}
+
+int Player::getPos()
+{
+	return this->position;
+}
+
+void Player::setPos(int pos)
+{
+	this->position = pos;
 }

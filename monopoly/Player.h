@@ -1,9 +1,12 @@
+#pragma once
 #include <string>
 #include <vector>
-#include "Space.h"
+#include <array>
+
 
 #ifndef PLAYER_H
 #define PLAYER_H
+
 
 class Player
 {
@@ -14,13 +17,21 @@ protected:
 	int bank;
 	int position;
 	//std::array<Card, 10> inventory;
-	std::vector<Space> properties;
+	std::array<int, 40> properties{ 0 };
 	bool inJail = false;
+	bool defaultSpace = false;
+
 public:
+	Player(std::string name, std::string icon, int pos);
+	Player();
 	void takeTurn();
 	void putInJail();
 	bool tryEscapeJail();
 	int getPosition();
+	bool isDefault();
+	std::string getIcon();
+	int getPos();
+	void setPos(int);
 };
 
 #endif

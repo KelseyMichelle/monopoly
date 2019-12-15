@@ -5,16 +5,26 @@
 
 #ifndef SPACE_H
 #define SPACE_H
+
 class Space
 {
 public:
-	Space(int position, std::string name, array<Player, 6> players);
+	Space(std::string name, std::array<Player*, 6>* players, int position);
+	Space();
 	std:: string printTile(int line);
-private:
+protected:
 	int position;
 	std::string name;
-	array<Player, 6> players;
-
+	std::array<Player*, 6> players;
+	std::string lineOne();
+	std::string lineTwo();
+	std::string lineThree();
+	std::string lineFour();
+	std::string lineFive();
+	std::string lineSix();
+	std::string topName;
+	std::string bottomName;
+	void setNames(std::string name);
 };
 
 #endif
