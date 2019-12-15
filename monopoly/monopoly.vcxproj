@@ -123,16 +123,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Dice.h" />
     <ClInclude Include="Space.h" />
     <ClInclude Include="Player.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Dice.cpp" />
-    <ClCompile Include="Dice.h">
-      <FileType>CppHeader</FileType>
-    </ClCompile>
     <ClCompile Include="MonopolyApp.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Space.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

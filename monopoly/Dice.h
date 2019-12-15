@@ -1,3 +1,4 @@
+#pragma once
 #ifndef dice_h
 #define dice_h
 
