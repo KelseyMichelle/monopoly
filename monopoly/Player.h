@@ -4,6 +4,7 @@
 #include <array>
 
 
+
 #ifndef PLAYER_H
 #define PLAYER_H
 
@@ -17,7 +18,7 @@ protected:
 	int bank;
 	int position;
 	//std::array<Card, 10> inventory;
-	std::array<int, 40> properties{ 0 };
+	std::array<bool*, 40> propertiesPtr{ 0 };
 	bool inJail = false;
 	bool defaultSpace = false;
 
@@ -32,6 +33,8 @@ public:
 	std::string getIcon();
 	int getPos();
 	void setPos(int);
+	std::array<bool*, 40> getProperties();
+	
 };
 
 #endif

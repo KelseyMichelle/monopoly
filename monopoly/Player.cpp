@@ -1,5 +1,7 @@
 #include "Player.h"
 #include <iostream>
+#include "Space.h"
+#include "BikePath.h"
 //spaghetti
 
 using namespace std;
@@ -71,4 +73,9 @@ int Player::getPos()
 void Player::setPos(int pos)
 {
 	this->position = pos;
+}
+
+array<bool*, 40 > Player::getProperties()
+{
+	return this->propertiesPtr;
 }

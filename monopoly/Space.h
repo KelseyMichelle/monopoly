@@ -9,13 +9,17 @@
 class Space
 {
 public:
-	Space(std::string name, std::array<Player, 6>* players, int position);
+	Space(std::string name, std::array<Player*, 6> players, int position, int type);
 	Space();
 	std::string getLine(int line);
+	int getType();
+	std::string getName();
+	void virtual action(Player* playerPtr);
+	int getPosition();
 protected:
 	int position;
 	std::string name;
-	std::array<Player, 6>* players;
+	std::array<Player*, 6> players;
 	std::string lineOne();
 	std::string lineTwo();
 	std::string lineThree();
@@ -24,7 +28,11 @@ protected:
 	std::string lineSix();
 	std::string topName;
 	std::string bottomName;
+
+
 	void setNames(std::string name);
+	int type;
+	
 };
 
 #endif

@@ -123,6 +123,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="BikePath.h" />
     <ClInclude Include="Board.h" />
     <ClInclude Include="Dice.h" />
     <ClInclude Include="GetInput.h" />
@@ -131,6 +132,7 @@
     <ClInclude Include="Player.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BikePath.cpp" />
     <ClCompile Include="Board.cpp" />
     <ClCompile Include="Dice.cpp" />
     <ClCompile Include="GetInput.cpp" />
@@ -138,6 +140,9 @@
     <ClCompile Include="MonopolyApp.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Space.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\..\..\Documents\README.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

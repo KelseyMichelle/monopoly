@@ -13,6 +13,7 @@ public:
 	static std::string getString(std::string query);
 	static std::string getString();
 	static std::string getString(std::string query, std::vector<std::string> options);
+	static std::string getString(std::string query, std::vector<std::string> options, std::vector<std::string> secretOptions);
 
 };
 

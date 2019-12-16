@@ -4,12 +4,13 @@
 
 using namespace std;
 
-Space::Space(string name, array<Player, 6>* players, int position)
+Space::Space(string name, array<Player*, 6> players, int position, int type)
 {
 	this->position = position;
 	this->name = name;
 	this->setNames(name);
 	this->players = players;
+	this->type = type;
 }
 
 Space::Space()
@@ -91,19 +92,18 @@ std::string Space::lineFive()
 {
 	//checks if players are blank templates and whether they occupy the square
 	string result{ " " };
-	array<Player, 6> players1;
-	players1 = *players;
-	for (Player p : players1)
+
+	for (Player* p : players)
 	{
-		if (p.isDefault())
+		if (p->isDefault())
 		{
 			result += " ";
 		}
 		else
 		{
-			if (p.getPosition() == this->position)
+			if (p->getPosition() == this->position)
 			{
-				result += p.getIcon();
+				result += p->getIcon();
 			}
 			else
 			{
@@ -145,4 +145,26 @@ void Space::setNames(string name)
 	{
 		bottomName = bottomName.substr(0, 8);
 	}
+}
+
+int Space::getType()
+{
+	return this->type;
+}
+
+std::string Space::getName()
+{
+	string response = name;
+	cout << name;
+	return name;
+}
+
+void Space::action(Player* playerPtr)
+{
+	cout << "this does nothing so far" << endl;
+}
+
+int Space::getPosition()
+{
+	return this->position;
 }
