@@ -121,7 +121,6 @@ std::string Space::lineSix()
 
 void Space::setNames(string name)
 {
-	cout << name;
 	if (name.find(" ") == string::npos)
 	{
 		topName = name;
