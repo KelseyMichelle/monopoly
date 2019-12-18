@@ -26,6 +26,7 @@ int main()
 
 		board[x] = s2;
 	}
+	board[0] = s1;
 	array<array<InfoSquare, 3>, 3> infoSquares;
 	array<array<InfoSquare, 3>, 3>* infoPtr = &infoSquares;
 	Board b1{ &board, &p1, infoPtr };
