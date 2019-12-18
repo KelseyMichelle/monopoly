@@ -123,21 +123,32 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Bikepath.h" />
     <ClInclude Include="Board.h" />
+    <ClInclude Include="Card.h" />
+    <ClInclude Include="CardSpace.h" />
     <ClInclude Include="Dice.h" />
     <ClInclude Include="GetInput.h" />
+    <ClInclude Include="Buyable.h" />
     <ClInclude Include="InfoSquare.h" />
+    <ClInclude Include="Property.h" />
     <ClInclude Include="Space.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Utility.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Bikepath.cpp" />
     <ClCompile Include="Board.cpp" />
+    <ClCompile Include="Buyable.cpp" />
+    <ClCompile Include="CardSpace.cpp" />
     <ClCompile Include="Dice.cpp" />
     <ClCompile Include="GetInput.cpp" />
     <ClCompile Include="InfoSquare.cpp" />
     <ClCompile Include="MonopolyApp.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Property.cpp" />
     <ClCompile Include="Space.cpp" />
+    <ClCompile Include="Utility.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
