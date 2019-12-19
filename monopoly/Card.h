@@ -12,6 +12,7 @@ protected:
 
 public:
 	Card(int cardID, std::string description, int type, int x);
+	Card(int cardID, std::string description, int type);
 	Card();
 	int getCardID();
 	std::string getDescription();

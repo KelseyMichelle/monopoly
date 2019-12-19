@@ -9,6 +9,13 @@ Card::Card(int cardID, std::string description, int type, int x)
 	this->x = x;
 }
 
+Card::Card(int cardID, std::string description, int type)
+{
+	this->cardID = cardID;
+	this->description = description;
+	this->type = type;
+}
+
 Card::Card()
 {
 	cardID = 0;
