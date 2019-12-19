@@ -2,19 +2,17 @@
 #include <string>
 #include <vector>
 #include <array>
-
+#include "Person.h"
 
 #ifndef PLAYER_H
 #define PLAYER_H
 
 
-class Player
+class Player : public Person
 {
 protected:
 
-	std::string name;
 	std::string icon;
-	int bank;
 	int position;
 	//std::array<Card, 10> inventory;
 	std::array<int, 40> properties{ 0 };
@@ -22,7 +20,7 @@ protected:
 	bool defaultSpace = false;
 
 public:
-	Player(std::string name, std::string icon, int pos);
+	Player(std::string name, std::string icon, int pos, unsigned int bank);
 	Player();
 	void takeTurn();
 	void putInJail();

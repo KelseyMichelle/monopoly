@@ -5,7 +5,7 @@
 using namespace std;
 
 //create player object
-Player::Player(std::string name, std::string icon, int position)
+Player::Player(std::string name, std::string icon,int position, unsigned int balance) : Person(name, balance)
 {
 	this->name = name;
 	this->icon = icon;
@@ -13,9 +13,8 @@ Player::Player(std::string name, std::string icon, int position)
 	defaultSpace = false;
 }
 //default constructor
-Player::Player()
+Player::Player() : Person ("default", 5000)
 {
-	this->name = "default";
 	this->icon = "*";
 	this->position = 0;
 	this->defaultSpace = true;

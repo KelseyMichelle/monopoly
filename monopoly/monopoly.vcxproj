@@ -131,6 +131,7 @@
     <ClInclude Include="GetInput.h" />
     <ClInclude Include="Buyable.h" />
     <ClInclude Include="InfoSquare.h" />
+    <ClInclude Include="Person.h" />
     <ClInclude Include="Property.h" />
     <ClInclude Include="Space.h" />
     <ClInclude Include="Player.h" />
@@ -145,10 +146,14 @@
     <ClCompile Include="GetInput.cpp" />
     <ClCompile Include="InfoSquare.cpp" />
     <ClCompile Include="MonopolyApp.cpp" />
+    <ClCompile Include="Person.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Property.cpp" />
     <ClCompile Include="Space.cpp" />
     <ClCompile Include="Utility.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="spaces.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
