@@ -12,12 +12,6 @@ protected:
 	int canopy{ 0 };
 	std::string name;
 	std::array<Player, 6>* players;
-	std::string lineOne();
-	std::string lineTwo();
-	std::string lineThree();
-	std::string lineFour();
-	std::string lineFive();
-	std::string lineSix();
 	std::string topName;
 	std::string bottomName;
 	bool isMortgaged;
