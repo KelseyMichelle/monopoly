@@ -60,10 +60,10 @@
     <ClInclude Include="CreateBoard.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CardSource.h">
+    <ClInclude Include="TheGame.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TheGame.h">
+    <ClInclude Include="CardSource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
