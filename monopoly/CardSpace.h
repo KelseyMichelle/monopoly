@@ -8,12 +8,6 @@ protected:
 	int position;
 	std::string name;
 	std::array<Player, 6>* players;
-	std::string lineOne();
-	std::string lineTwo();
-	std::string lineThree();
-	std::string lineFour();
-	std::string lineFive();
-	std::string lineSix();
 	std::string topName;
 	std::string bottomName;
 	std::array<Card, 20>* cards;
