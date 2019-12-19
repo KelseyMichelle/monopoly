@@ -9,6 +9,11 @@
 
 using namespace std;
 
+std::string Player::getName()
+{
+	return name;
+}
+
 //create player object
 Player::Player(std::string name, std::string icon,int position, int balance, array<string, 40> propertyNames) : Person(name, balance)
 {

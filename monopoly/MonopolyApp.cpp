@@ -40,8 +40,8 @@ int main()
 	array<Player, 6> players;
 	for (int i{ 0 }; i < numPlayers; i++)
 	{
-		string name = GetInput::getString("Player " + to_string(i) + "name: ");
-		string icon = GetInput::getString("Player " + to_string(i) + "icon (@ # % ^ & * ? < > + =): ", { "@","#","%","^","&","*","?","<",">","+","=" });
+		string name = GetInput::getString("Player " + to_string(i) + " name: ");
+		string icon = GetInput::getString(name + "'s icon (@ # % ^ & * ? < > + =): ", { "@","#","%","^","&","*","?","<",">","+","=" });
 		Player p {name, icon, 0, startingCash, b1.getNames()};
 		players[i] = p;
 	}
@@ -60,6 +60,7 @@ int main()
 		{
 			if (!p->isDefault())
 			{
+				cout << (*p).getName() << "'s turn." << endl;
 				(*p).takeTurn();
 				squares[(*p).getPosition()]->action(*p);
 

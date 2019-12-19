@@ -24,12 +24,13 @@ protected:
 	int turnsInJail;
 	std::array<std::string, 40> propertyNames;
 	int turncount{ 0 };
+	
 public:
 	Player(std::string name, std::string icon, int pos, int bank, std::array<std::string,40> propertyNames);
 	Player();
 	void takeTurn();
 	bool defaultSpace = false;
-
+	std::string getName();
 
 	void putInJail();
 	int moveForward(unsigned int toMove);
