@@ -4,11 +4,11 @@
 
 using namespace std;
 
-Board::Board(std::array<Space, 40>* spaces, std::array<Player, 6>* playersPtr, std::array<std::array<InfoSquare, 3>, 3>* infoSquarePtr)
+Board::Board(std::array<Space, 40>& spaces, std::array<Player, 6>& players, std::array<std::array<InfoSquare, 3>, 3>& infoSquare)
 {
-	this->spacesPtr = spaces;
-	this->playerPtr = playersPtr;
-	this->infoSquarePtr = infoSquarePtr;
+	this->spaces = spaces;
+	this->players = players;
+	this->infoSquares = infoSquare;
 }
 
 void Board::printBoard()
@@ -17,8 +17,7 @@ void Board::printBoard()
 	// get the individual lines that need to be printed
 	// while iterating through the board, printing in total
 	// 11 different tiles intitiall to finalize the top of the board
-	array<Space, 40> spaces = *this->spacesPtr;
-
+	cout << &players[0];
 	for (int x{ 0 }; x < 5; x++)
 	{
 		cout << "|";
@@ -44,7 +43,7 @@ void Board::printBoard()
 		}
 		cout << "|";
 		cout << spaces[39 - squareCounter].getLine(x);
-		array<array<InfoSquare, 3>, 3> infoSquares = *infoSquarePtr;
+		
 
 		if (x == 0)
 		{

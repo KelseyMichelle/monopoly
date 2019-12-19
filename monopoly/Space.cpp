@@ -4,7 +4,7 @@
 
 using namespace std;
 
-Space::Space(string name, array<Player, 6>* players, int position)
+Space::Space(string name, array<Player, 6> &players, int position)
 {
 	this->position = position;
 	this->name = name;
@@ -91,9 +91,8 @@ std::string Space::lineFive()
 {
 	//checks if players are blank templates and whether they occupy the square
 	string result{ " " };
-	array<Player, 6> players1;
-	players1 = *players;
-	for (Player p : players1)
+
+	for (Player p : players)
 	{
 		if (p.isDefault())
 		{

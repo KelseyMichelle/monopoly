@@ -7,7 +7,7 @@ class CardSpace : public Space
 protected:
 	int position;
 	std::string name;
-	std::array<Player, 6>* players;
+	std::array<Player, 6> players;
 	std::string lineOne();
 	std::string lineTwo();
 	std::string lineThree();
@@ -16,10 +16,10 @@ protected:
 	std::string lineSix();
 	std::string topName;
 	std::string bottomName;
-	std::array<Card, 20>* cards;
+	std::array<Card, 20> cards;
 	
 public:
-	CardSpace(std::string name, std::array<Player, 6>* players, int position, std::array<Card, 20>* cards);
+	CardSpace(std::string name, std::array<Player, 6> &players, int position, std::array<Card, 20> &cards);
 	Card dealCard(Player thePlayer);
 
 

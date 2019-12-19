@@ -24,7 +24,7 @@ protected:
 	
 
 public:
-	Buyable(std::string name, std::array<Player, 6>* players, int position, int price, bool isMortgaged, int rent, Player owner, int group);
+	Buyable(std::string name, std::array<Player, 6> &players, int position, int price, bool isMortgaged, int rent, Player &owner, int group);
 	void setPrice(int newPrice);
 	void setOwner(Player newOwner);
 	void setIsMortgaged(bool TF);
