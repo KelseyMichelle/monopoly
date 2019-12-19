@@ -1,6 +1,6 @@
 #include "Utility.h"
 
-Utility::Utility(std::string topName, std::string bottomName, std::array<Player, 6>& players, int position, int price, bool isMortgaged, int rent, Player& owner, int group, int groupSize) 
+Utility::Utility(std::string topName, std::string bottomName, std::array<Player*, 6>& players, int position, int price, bool isMortgaged, int rent, Player& owner, int group, int groupSize) 
 	: Buyable (topName, bottomName, players, position, price, isMortgaged, rent, owner, group, groupSize)
 {
 }

@@ -10,7 +10,7 @@
 using namespace std;
 
 //create player object
-Player::Player(std::string name, std::string icon,int position, unsigned int balance, array<string, 40> propertyNames) : Person(name, balance)
+Player::Player(std::string name, std::string icon,int position, int balance, array<string, 40> propertyNames) : Person(name, balance)
 {
 	this->name = name;
 	this->icon = icon;
@@ -22,7 +22,6 @@ Player::Player(std::string name, std::string icon,int position, unsigned int bal
 Player::Player() : Person ("default", 5000)
 {
 	this->icon = "*";
-	this->position = 0;
 	this->defaultSpace = true;
 	this->position = 0;
 }
@@ -31,6 +30,8 @@ void Player::takeTurn()
 {
 	//only take turn normally if not in jail
 	string dice;
+	
+	turncount++;
 	if (!inJail)
 	{
 		int rollCount{ 0 };
@@ -43,11 +44,12 @@ void Player::takeTurn()
 			d2 = Dice::rollDie();
 			
 			cout << "Dice roll: " << d1 << " + " << d2 << " = " << (d1 + d2) << endl;
+			
 			moveForward(d1 + d2);
-
+			cout << "You are now on space #" << position << ", " << propertyNames[position] << endl;
 			
 		} while (d1 == d2 && rollCount != 3);
-		if (rollCount == 3)
+		if (rollCount == 4)
 		{
 			putInJail();
 		}
@@ -57,7 +59,7 @@ void Player::takeTurn()
 				<< "declare -  Declare bankrupty" << endl
 				<< "owned - see properties" << endl
 				<< "end - end turn" << endl;
-			string choice = GetInput::getString("what would you like to do?: ", { "declare", "owned", "end" });
+			string choice = GetInput::getString("what would you like to do?: ", { "declare", "owned", "end" }, { "jail", "rosebud", "move" });
 			if (choice == "declare")
 			{
 				this->declareBankruptcy();
@@ -72,6 +74,16 @@ void Player::takeTurn()
 					}
 				}
 			}
+			else if (choice == "jail")
+			{
+				cout << "you've chosen the badger.. good luck" << endl;
+				putInJail();
+			}
+			else if (choice == "move")
+			{
+				int moveTo = GetInput::getInt("which square would you like to move to?(0-39): ", 0, 39);
+				position = moveTo;
+			}
 			
 		}
 
@@ -80,12 +92,13 @@ void Player::takeTurn()
 	{
 		tryEscapeJail();
 	}
+	cout << turncount;
 }
 
 
 void Player::putInJail()
 {
-	cout << "You've been attacked by a badger due to your swift movements! It must have mistook you for a snake!\n";
+	cout << "You've been attacked by a badger due to your swift movements! It must have mistook you for a snake!" << endl;
 	position = 10;
 	inJail = true;
 }
@@ -132,6 +145,7 @@ bool Player::tryEscapeJail()
 						fail = true;
 						return false;
 					}
+					cout << "you rolled " << d1 << " and " << d2;
 				}
 				if (!fail)
 				{
@@ -139,6 +153,12 @@ bool Player::tryEscapeJail()
 					cout << "you have escaped the badger!";
 					return true;
 				}
+			}
+			else
+			{
+				subtractFromBank(50);
+				cout << "the badger, satisfied with it's bribe, wanders off. for now.";
+				inJail = false;
 			}
 		}
 	}
@@ -153,7 +173,7 @@ int Player::getPosition()
 
 bool Player::isDefault()
 {
-	return this->defaultSpace;
+	return defaultSpace;
 }
 
 string Player::getIcon()
@@ -185,7 +205,7 @@ void Player::subtractFromBank(int withdraw)
 	}
 	else
 	{
-		cout << "You don't seem to have enough money, perhaps you should liquidate some assets or declare bankruptcy.";
+		cout << "You don't seem to have enough money, perhaps you should liquidate some assets or declare bankruptcy.\n";
 	}
 }
 
@@ -201,6 +221,7 @@ bool Player::getIsBankrupt()
 
 void Player::declareBankruptcy()
 {
+	cout << "you shout, into the woods: I DECLARE BANKRUPTCY!\nthe animals are unimpressed, and you are broke\n";
 	isBankrupt = true;
 }
 

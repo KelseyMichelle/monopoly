@@ -83,3 +83,38 @@ string GetInput::getString(std::string query, std::vector<std::string> options)
 	}
 	return response;
 }
+
+std::string GetInput::getString(std::string query, std::vector<std::string> options, std::vector<std::string> secretOptions)
+{
+	bool validInput{ false };
+	string response{ "" };
+	while (!validInput)
+	{
+		response = GetInput().getString(query);
+
+		for (string& s : options)
+		{
+			if (response == s)
+			{
+				validInput = true;
+			}
+		}
+		for (string& s : secretOptions)
+		{
+			if (response == s) {
+				validInput = true;
+			}
+		}
+		if (!validInput)
+		{
+			cout << "invalid input, please enter one of the following: ";
+			for (string& s : options)
+			{
+				cout << s << ", ";
+			}
+			cout << endl;
+		}
+
+	}
+	return response;
+}

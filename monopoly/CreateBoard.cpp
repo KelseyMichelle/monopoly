@@ -10,13 +10,13 @@
 
 using namespace std;
 
-array<Space*, 40> CreateBoard::createBoard(array<Player, 6>& players, Player& banker, array<Card, 20> geoCacheCards, array<Card, 20> flukeCards)
+array<Space*, 40> CreateBoard::createBoard(array<Player*, 6>& players, Player& banker, array<Card, 20> geoCacheCards, array<Card, 20> flukeCards)
 {
 	array<Space*,40> output;
 
 	output[0] = new Space( "GO", "", players, 0 );
 	//Property(name, players, position,price, isMortgaged, rent, owner, group,groupSize,treeCost,canopyCost)
-	//Property(std::string name, std::array<Player, 6> & players, int position, int price, bool isMortgaged, int rent, Player & owner, int group, int groupSize, int treeCost, int canopyCost)
+	//Property(std::string name, std::array<Player*, 6> & players, int position, int price, bool isMortgaged, int rent, Player & owner, int group, int groupSize, int treeCost, int canopyCost)
 	output[1] = new Property("BUCKEYE", "STREET", players, 1, 60, false, 2, banker, 6,2, 50, 250);
 	output[2] = new CardSpace("GEOCACHE", "", players, 2, geoCacheCards);
 	output[3] = new Property("PINE", "ROAD", players, 3, 60, false, 4, banker, 6,2, 50, 250);

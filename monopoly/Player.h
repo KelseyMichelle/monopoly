@@ -16,18 +16,19 @@ protected:
 	std::string icon;
 	int position;
 	//std::array<Card, 10> inventory;
-	std::array<int, 40> properties{ 1 };
+	std::array<int, 40> properties{ 0, 1, 0, 1, 0, 1, 0, 1 };
 	bool inJail = false;
-	bool defaultSpace = false;
+	
 	bool isBankrupt = false;
 	std::vector<int> ownedProperty;
 	int turnsInJail;
 	std::array<std::string, 40> propertyNames;
+	int turncount{ 0 };
 public:
-	Player(std::string name, std::string icon, int pos, unsigned int bank, std::array<std::string,40> propertyNames);
+	Player(std::string name, std::string icon, int pos, int bank, std::array<std::string,40> propertyNames);
 	Player();
 	void takeTurn();
-
+	bool defaultSpace = false;
 
 
 	void putInJail();

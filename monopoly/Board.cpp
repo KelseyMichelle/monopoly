@@ -4,7 +4,7 @@
 
 using namespace std;
 
-Board::Board(std::array<Space*, 40>& spaces, std::array<Player, 6>& players, std::array<std::array<InfoSquare, 3>, 3>& infoSquare)
+Board::Board(std::array<Space*, 40>& spaces, std::array<Player*, 6>& players, std::array<std::array<InfoSquare, 3>, 3>& infoSquare)
 {
 	this->spacesPtr = &spaces;
 	this->playerPtr = &players;
