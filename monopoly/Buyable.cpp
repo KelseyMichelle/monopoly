@@ -65,3 +65,5 @@ bool Buyable::setAllGroup()
 {
 	return allGroup;
 }
+
+
