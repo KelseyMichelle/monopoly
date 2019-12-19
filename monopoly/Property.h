@@ -25,4 +25,6 @@ public:
 	int getRent() override;
 	void plantTree();
 	void growCanopy();
+	void cutDownTree();
+	void deforestCanopy();
 };

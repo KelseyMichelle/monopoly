@@ -34,8 +34,8 @@ public:
 	void addToBank(int deposit);
 	void subtractFromBank(int withdraw);
 	int getBank();
-	void setIsBankrupt(bool TF);
 	bool getIsBankrupt();
+	void declareBankruptcy();
 };
 
 #endif
