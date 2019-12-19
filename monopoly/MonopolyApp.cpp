@@ -18,8 +18,11 @@ int main()
 	Dice d6{};
 	array<Player, 6> p1;
 	
-	
-	Space s1{"hubertsssssss sdfasdfsfsdfasdfsffsa", p1, 0};
+	Player newP{ "kels", "%" ,3, 100};
+	Player newP2{ "charlz", "*" , 2, 100};
+	p1[0] = newP;
+	p1[2] = newP2;
+	/*Space s1{"hubertsssssss sdfasdfsfsdfasdfsffsa", p1, 0};
 	array<Space, 40> board;
 	for (int x{ 0 }; x < 40;x++)
 	{
@@ -27,7 +30,7 @@ int main()
 
 		board[x] = s2;
 	}
-	board[0] = s1;
+	board[0] = s1;*/
 	array<Card, 20> cards;
 	array<string, 40> pants{};
 	Player banker{ "banker", "$",3,100, pants };

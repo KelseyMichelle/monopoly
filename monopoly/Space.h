@@ -9,14 +9,15 @@
 class Space
 {
 public:
-	Space(std::string name, std::array<Player, 6>& players, int position);
+	Space(std::string topName, std::string bottomName, std::array<Player, 6>& players, int position);
 	Space();
 	std::string getLine(int line);
 	virtual void action(Player& player);
 	std::string getName();
 protected:
 	int position;
-	std::string name;
+	std::string topName;
+	std::string bottomName;
 	std::array<Player, 6>* players;
 	std::string lineOne();
 	std::string lineTwo();
@@ -24,8 +25,6 @@ protected:
 	std::string lineFour();
 	std::string lineFive();
 	std::string lineSix();
-	std::string topName;
-	std::string bottomName;
 	void setNames(std::string name);
 };
 

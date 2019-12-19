@@ -13,6 +13,6 @@ protected:
 	int coffeeBreak = 100;
 
 public:
-	TaxSpace(std::string name, std::array<Player, 6>& players, int position);
+	TaxSpace(std::string topName, std::string bottomName, std::array<Player, 6>& players, int position);
 	void calculateTax(Player curPLayer);
 };

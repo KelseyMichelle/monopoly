@@ -3,8 +3,8 @@
 
 using namespace std;
 
-Property::Property(std::string name, std::array<Player, 6>& players, int position, int price, bool isMortgaged, int rent, Player& owner, int group, int groupSize, int treeCost, int canopyCost)
-: Buyable(name, players, position, price, isMortgaged, rent, owner, group, groupSize)
+Property::Property(string topName, string bottomName, array<Player, 6>& players, int position, int price, bool isMortgaged, int rent, Player& owner, int group, int groupSize, int treeCost, int canopyCost)
+: Buyable(topName, bottomName, players, position, price, isMortgaged, rent, owner, group, groupSize)
 {
 	this->treeCost = treeCost;
 	this->canopyCost = canopyCost;

@@ -4,18 +4,20 @@
 
 using namespace std;
 
-Space::Space(string name, array<Player, 6>& players, int position)
+Space::Space(string topName, string bottomName, array<Player, 6>& players, int position)
 {
 	this->position = position;
-	this->name = name;
-	this->setNames(name);
+	this->topName = topName;
+	this->bottomName = bottomName;
+	//this->setTopName(newTopName);
 	this->players = &players;
 }
 
 Space::Space()
 {
-	this->name = "DEFAULT SQUARE";
-	this->setNames(name);
+	this->topName = "DEFAULT";
+	this->bottomName = "SQUARE";
+	//this->setNames(name);
 	this->players = players;
 	this->position = -1;
 }
@@ -74,6 +76,7 @@ std::string Space::lineTwo()
 
 std::string Space::lineThree()
 {
+	int topLen = topName.length();
 	string result{topName};
 	int spaceLeft = 8 - this->topName.length();
 	for (int i{ 0 }; i < spaceLeft; i++)
@@ -86,7 +89,7 @@ std::string Space::lineThree()
 
 std::string Space::lineFour()
 {
-	
+	int bottomLen = bottomName.length();
 	string result{ bottomName };
 	int spaceLeft = 8 - this->bottomName.length();
 	for (int i{ 0 }; i < spaceLeft; i++)
@@ -129,7 +132,7 @@ std::string Space::lineSix()
 	return "--------|";
 }
 
-void Space::setNames(string name)
+/*void Space::setNames(string name)
 {
 	if (name.find(" ") == string::npos)
 	{
@@ -154,4 +157,4 @@ void Space::setNames(string name)
 	{
 		bottomName = bottomName.substr(0, 8);
 	}
-}
+}*/
