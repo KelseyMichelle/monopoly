@@ -13,8 +13,8 @@ protected:
 
 public:
 	CardSource();
-	std::array getFlukeCards();
-	std::array getAllFlukeCards();
-	std::array getGeocacheCards();
-	std::array getAllGeocacheCards();
+	std::array<Card, 15> getFlukeCards();
+	std::array<Card, 20> getAllFlukeCards();
+	std::array<Card, 15> getGeocacheCards();
+	std::array<Card, 20> getAllGeocacheCards();
 };

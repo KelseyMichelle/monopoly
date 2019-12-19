@@ -61,7 +61,7 @@ void Space::action(Player& player)
 
 std::string Space::getName()
 {
-	return name;
+	return topName + " " + bottomName;
 }
 
 std::string Space::lineOne()

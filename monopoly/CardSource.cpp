@@ -6,25 +6,25 @@ using namespace std;
 
 CardSource::CardSource()
 {
-	flukeCards[0] = 
+	//flukeCards[0] = 
 }
 
-std::array CardSource::getFlukeCards()
+std::array<Card,15> CardSource::getFlukeCards()
 {
 	return flukeCards;
 }
 
-std::array CardSource::getAllFlukeCards()
+std::array<Card, 20> CardSource::getAllFlukeCards()
 {
 	return allFlukeCards;
 }
 
-std::array CardSource::getGeocacheCards()
+std::array<Card, 15> CardSource::getGeocacheCards()
 {
 	return geocacheCards;
 }
 
-std::array CardSource::getAllGeocacheCards()
+std::array<Card, 20> CardSource::getAllGeocacheCards()
 {
 	return allGeocacheCards;
 }

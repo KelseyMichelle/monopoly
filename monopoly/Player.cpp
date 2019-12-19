@@ -41,7 +41,9 @@ void Player::takeTurn()
 			rollCount++;
 			d1 =Dice::rollDie();
 			d2 = Dice::rollDie();
-			cout << d1 << " + " << d2 << " = " << (d1 + d2) << endl;
+			
+			cout << "Dice roll: " << d1 << " + " << d2 << " = " << (d1 + d2) << endl;
+			moveForward(d1 + d2);
 
 			
 		} while (d1 == d2 && rollCount != 3);
@@ -51,7 +53,7 @@ void Player::takeTurn()
 		}
 		else
 		{
-			cout << "Options:"
+			cout << "Options:" << endl
 				<< "declare -  Declare bankrupty" << endl
 				<< "owned - see properties" << endl
 				<< "end - end turn" << endl;
@@ -83,6 +85,7 @@ void Player::takeTurn()
 
 void Player::putInJail()
 {
+	cout << "You've been attacked by a badger due to your swift movements! It must have mistook you for a snake!\n";
 	position = 10;
 	inJail = true;
 }

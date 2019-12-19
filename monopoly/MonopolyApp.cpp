@@ -18,10 +18,7 @@ int main()
 	Dice d6{};
 	array<Player, 6> p1;
 	
-	Player newP{ "kels", "%" ,3, 100};
-	Player newP2{ "charlz", "*" , 2, 100};
-	p1[0] = newP;
-	p1[2] = newP2;
+
 	/*Space s1{"hubertsssssss sdfasdfsfsdfasdfsffsa", p1, 0};
 	array<Space, 40> board;
 	for (int x{ 0 }; x < 40;x++)
