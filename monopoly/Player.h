@@ -19,6 +19,7 @@ protected:
 	bool inJail = false;
 	bool defaultSpace = false;
 	bool isBankrupt = false;
+	std::vector<int> ownedProperty;
 
 public:
 	Player(std::string name, std::string icon, int pos, unsigned int bank);
@@ -36,6 +37,7 @@ public:
 	int getBank();
 	bool getIsBankrupt();
 	void declareBankruptcy();
+	void setNewProperty(int position);
 };
 
 #endif

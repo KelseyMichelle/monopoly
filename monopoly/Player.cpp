@@ -105,4 +105,9 @@ void Player::declareBankruptcy()
 	isBankrupt = true;
 }
 
+void Player::setNewProperty(int position)
+{
+	ownedProperty.push_back(position);
+}
+
 

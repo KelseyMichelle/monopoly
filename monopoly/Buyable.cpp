@@ -82,6 +82,7 @@ void Buyable::buyProperty(Player newOwner)
 	{
 		this->setOwner(newOwner);
 		owner.subtractFromBank(price);
+		owner.setNewProperty(position);
 	}
 }
 
