@@ -9,7 +9,7 @@
 class Space
 {
 public:
-	Space(std::string name, std::array<Player, 6>* players, int position);
+	Space(std::string name, std::array<Player, 6>& players, int position);
 	Space();
 	std::string getLine(int line);
 protected:
