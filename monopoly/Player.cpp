@@ -71,3 +71,38 @@ void Player::setPos(int pos)
 {
 	this->position = pos;
 }
+
+void Player::addToBank(int deposit)
+{
+	this->bank += deposit;
+}
+
+void Player::subtractFromBank(int withdraw)
+{
+	int newBank = this->bank - withdraw;
+	if (newBank >= 0)
+	{
+		this->bank -= withdraw;
+	}
+	else
+	{
+		//something that happens with bankruptcy, because I haven't figured that out yet
+	}
+}
+
+int Player::getBank()
+{
+	return bank;
+}
+
+void Player::setIsBankrupt(bool TF)
+{
+	this->isBankrupt = TF;
+}
+
+bool Player::getIsBankrupt()
+{
+	return isBankrupt;
+}
+
+
