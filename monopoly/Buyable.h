@@ -36,6 +36,7 @@ public:
 	Player getPlayer();
 	int getGroup();
 	bool setAllGroup();
-	void mortgageProperty(int position);
-	void buyProperty(int position);
+	void mortgageProperty();
+	void buyProperty(Player newOwner);
+	void liftMortgage();
 };

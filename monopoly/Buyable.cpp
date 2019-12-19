@@ -66,4 +66,30 @@ bool Buyable::setAllGroup()
 	return allGroup;
 }
 
+void Buyable::mortgageProperty()
+{
+	int mortgageFunds = this->price / 2;
+	this->owner.addToBank(mortgageFunds);
+	this->isMortgaged = true;
+}
+
+void Buyable::buyProperty(Player newOwner)
+{
+	Player inEscrow = newOwner;
+	if (inEscrow.getIsBankrupt() == true)
+	{	}
+	else
+	{
+		this->setOwner(newOwner);
+		owner.subtractFromBank(price);
+	}
+}
+
+void Buyable::liftMortgage()
+{
+	int interest = (int)price * .1;
+	int liftMortgageAmt = (price / 2) + interest;
+	owner.subtractFromBank(liftMortgageAmt);
+}
+
 
