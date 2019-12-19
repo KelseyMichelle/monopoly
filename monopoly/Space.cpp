@@ -52,6 +52,11 @@ std::string Space::getLine(int line)
 	return std::string();
 }
 
+void Space::action(Player& player)
+{
+	cout << "no actions have been designated for this space yet";
+}
+
 std::string Space::lineOne()
 {
 	return "---------";

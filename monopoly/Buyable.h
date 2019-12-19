@@ -12,13 +12,13 @@ protected:
 	std::array<Player, 6>* players;
 	std::string topName;
 	std::string bottomName;
-	bool isMortgaged;
-	bool allGroup;
+	bool isMortgaged = false;
+	bool allGroup = false;
 	Player owner;
 	
 
 public:
-	Buyable(std::string name, std::array<Player, 6>& players, int position, int price, bool isMortgaged, int rent, Player& owner, int group);
+	Buyable(std::string name, std::array<Player, 6>& players, int position, int price, bool isMortgaged, int rent, Player& owner, int group, int groupSize);
 	void setPrice(int newPrice);
 	void setOwner(Player& newOwner);
 	void setIsMortgaged(bool TF);

@@ -17,7 +17,7 @@ protected:
 	Player owner;
 
 public:
-	Utility(std::string name, std::array<Player, 6>& players, int position, int price, bool isMortgaged, int rent, Player& owner, int group);
+	Utility(std::string name, std::array<Player, 6>& players, int position, int price, bool isMortgaged, int rent, Player& owner, int group, int groupSize);
 	int getRent(int dieRoll);
 
 };
