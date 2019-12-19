@@ -60,6 +60,9 @@
     <ClInclude Include="CreateBoard.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CardSource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Player.cpp">
@@ -108,6 +111,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Card.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CardSource.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

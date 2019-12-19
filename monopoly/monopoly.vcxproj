@@ -126,6 +126,7 @@
     <ClInclude Include="Bikepath.h" />
     <ClInclude Include="Board.h" />
     <ClInclude Include="Card.h" />
+    <ClInclude Include="CardSource.h" />
     <ClInclude Include="CardSpace.h" />
     <ClInclude Include="CreateBoard.h" />
     <ClInclude Include="Dice.h" />
@@ -153,6 +154,7 @@
     <ClCompile Include="Person.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Property.cpp" />
+    <ClCompile Include="CardSource.cpp" />
     <ClCompile Include="Space.cpp" />
     <ClCompile Include="TaxSpace.cpp" />
     <ClCompile Include="Utility.cpp" />
