@@ -73,7 +73,7 @@ void Buyable::mortgageProperty()
 	this->isMortgaged = true;
 }
 
-void Buyable::buyProperty(Player newOwner)
+void Buyable::buyProperty(Player& newOwner)
 {
 	Player inEscrow = newOwner;
 	if (inEscrow.getIsBankrupt() == true)

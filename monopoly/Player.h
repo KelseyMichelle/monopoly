@@ -4,6 +4,7 @@
 #include <array>
 #include "Person.h"
 
+
 #ifndef PLAYER_H
 #define PLAYER_H
 
@@ -20,12 +21,17 @@ protected:
 	bool defaultSpace = false;
 	bool isBankrupt = false;
 	std::vector<int> ownedProperty;
-
+	int turnsInJail;
+	std::array<std::string, 40> propertyNames;
 public:
-	Player(std::string name, std::string icon, int pos, unsigned int bank);
+	Player(std::string name, std::string icon, int pos, unsigned int bank, std::array<std::string,40> propertyNames);
 	Player();
 	void takeTurn();
+
+
+
 	void putInJail();
+	int moveForward(unsigned int toMove);
 	bool tryEscapeJail();
 	int getPosition();
 	bool isDefault();

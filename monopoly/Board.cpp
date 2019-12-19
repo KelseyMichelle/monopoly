@@ -79,3 +79,13 @@ void Board::printBoard()
 		cout << endl;
 	}
 }
+
+std::array<string, 40> Board::getNames()
+{
+	array<string, 40> output;
+	for (int i{ 0 }; i < 40; i++)
+	{
+		output[i] = (*spacesPtr)[i]->getName();
+	}
+	return output;
+}
