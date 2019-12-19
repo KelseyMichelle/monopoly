@@ -1,7 +1,7 @@
 #include "Property.h"
 
-Property::Property(std::string name, std::array<Player, 6>& players, int position, int price, bool isMortgaged, int rent, Player& owner, int group)
-: Buyable(name, players, position, price, isMortgaged, rent, owner, group){}
+Property::Property(std::string name, std::array<Player, 6>& players, int position, int price, bool isMortgaged, int rent, Player& owner, int group, int groupSize)
+: Buyable(name, players, position, price, isMortgaged, rent, owner, group, groupSize){}
 
 
 int Property::getRent()

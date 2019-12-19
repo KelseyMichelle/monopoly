@@ -12,6 +12,7 @@ public:
 	Space(std::string name, std::array<Player, 6>& players, int position);
 	Space();
 	std::string getLine(int line);
+	void action(Player& player);
 protected:
 	int position;
 	std::string name;

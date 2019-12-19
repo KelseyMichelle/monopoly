@@ -12,8 +12,8 @@ protected:
 	std::array<Player, 6>* players;
 	std::string topName;
 	std::string bottomName;
-	bool isMortgaged;
-	bool allGroup;
+	bool isMortgaged = false;
+	bool allGroup = false;
 	Player owner;
 	
 
