@@ -35,8 +35,7 @@ void Player::takeTurn()
 {
 	//only take turn normally if not in jail
 	string dice;
-	
-	turncount++;
+
 	if (!inJail)
 	{
 		int rollCount{ 0 };
@@ -64,7 +63,7 @@ void Player::takeTurn()
 				<< "declare -  Declare bankrupty" << endl
 				<< "owned - see properties" << endl
 				<< "end - end turn" << endl;
-			string choice = GetInput::getString("what would you like to do?: ", { "declare", "owned", "end" }, { "jail", "rosebud", "move" });
+			string choice = GetInput::getString("what would you like to do?: ", { "declare", "owned", "end" }, { "jail", "rosebud", "move", "buyany" });
 			if (choice == "declare")
 			{
 				this->declareBankruptcy();
@@ -89,6 +88,11 @@ void Player::takeTurn()
 				int moveTo = GetInput::getInt("which square would you like to move to?(0-39): ", 0, 39);
 				position = moveTo;
 			}
+			else if ("buyany")
+			{
+				int moveTo = GetInput::getInt("which square would you like to buy? (0-39): ", 0, 39);
+				properties[moveTo] = 1;
+			}
 			
 		}
 
@@ -97,7 +101,7 @@ void Player::takeTurn()
 	{
 		tryEscapeJail();
 	}
-	cout << turncount;
+
 }
 
 
@@ -124,7 +128,7 @@ bool Player::tryEscapeJail()
 	{
 		if (turnsInJail >= 3)
 		{
-			cout << "the badget got bored and decided to start harassing others - you've escaped... for now" << endl;
+			cout << "the badger got bored and decided to start harassing others - you've escaped... for now" << endl;
 			inJail = false;
 		}
 		else
@@ -150,7 +154,7 @@ bool Player::tryEscapeJail()
 						fail = true;
 						return false;
 					}
-					cout << "you rolled " << d1 << " and " << d2;
+					cout << "you rolled " << d1 << " and " << d2 << endl;
 				}
 				if (!fail)
 				{
@@ -232,7 +236,7 @@ void Player::declareBankruptcy()
 
 void Player::setNewProperty(int position)
 {
-	ownedProperty.push_back(position);
+	properties[position] = 1;
 }
 
 

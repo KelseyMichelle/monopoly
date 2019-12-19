@@ -16,7 +16,7 @@ protected:
 	std::string icon;
 	int position;
 	//std::array<Card, 10> inventory;
-	std::array<int, 40> properties{ 0, 1, 0, 1, 0, 1, 0, 1 };
+	std::array<int, 40> properties{0};
 	bool inJail = false;
 	
 	bool isBankrupt = false;

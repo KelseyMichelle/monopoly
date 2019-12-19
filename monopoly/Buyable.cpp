@@ -75,15 +75,8 @@ void Buyable::mortgageProperty()
 
 void Buyable::buyProperty(Player& newOwner)
 {
-	Player inEscrow = newOwner;
-	if (inEscrow.getIsBankrupt() == true)
-	{	}
-	else
-	{
-		this->setOwner(newOwner);
-		owner.subtractFromBank(price);
-		owner.setNewProperty(position);
-	}
+	newOwner.setNewProperty(this->position);
+
 }
 
 void Buyable::liftMortgage()

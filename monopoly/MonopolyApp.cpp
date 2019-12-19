@@ -10,6 +10,7 @@
 #include "CreateBoard.h"
 #include "Player.h"
 #include "TheGame.h"
+#include "Buyable.h"
 
 using namespace std;
 
@@ -56,14 +57,33 @@ int main()
 
 	while (response != "q")
 	{
-		for (Player*& p : p1)
+		for (Player* p : p1)
 		{
 			if (!p->isDefault())
 			{
 				cout << (*p).getName() << "'s turn." << endl;
 				(*p).takeTurn();
-				squares[(*p).getPosition()]->action(*p);
+				squares[p->getPosition()]->action(*p);
+				try
+				{
+					Buyable* pr = dynamic_cast<Buyable*>(squares[p->getPosition()]);
+					if (pr != NULL) {
+						if (pr->buyable == true)
+						{
+							cout << "this property is buyable! would you like to buy it for";
+							cout << pr->getPrice() << "?" << endl;
+							response = GetInput::getString("Would you like to buy this? (y/n)", { "y", "n" });
+							if (response == "y")
+							{
+								pr->buyProperty(*p);
+							}
+						}
+					}
+				}
+				catch (exception e)
+				{
 
+				}
 				b1.printBoard();
 			}
 		}

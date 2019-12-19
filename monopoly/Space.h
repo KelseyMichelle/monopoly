@@ -14,6 +14,9 @@ public:
 	std::string getLine(int line);
 	virtual void action(Player& player);
 	std::string getName();
+	bool buyable{ false };
+	virtual int getPrice();
+	virtual void buyProperty(Player& newOwner);
 protected:
 	int position;
 	std::string topName;
@@ -25,7 +28,9 @@ protected:
 	std::string lineFour();
 	std::string lineFive();
 	std::string lineSix();
-	void setNames(std::string name);
+	//void setNames(std::string name);
+	
+	
 };
 
 #endif

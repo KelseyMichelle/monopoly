@@ -31,6 +31,7 @@ public:
 	int getGroup();
 	bool setAllGroup();
 	void mortgageProperty();
-	void buyProperty(Player& newOwner);
+	int buyable{ true };
+	void buyProperty(Player& newOwner) override;
 	void liftMortgage();
 };

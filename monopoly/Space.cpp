@@ -64,6 +64,15 @@ std::string Space::getName()
 	return topName + " " + bottomName;
 }
 
+int Space::getPrice()
+{
+	return 0;
+}
+
+void Space::buyProperty(Player& newOwner)
+{
+}
+
 std::string Space::lineOne()
 {
 	return "---------";
