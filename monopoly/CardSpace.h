@@ -18,10 +18,9 @@ protected:
 	std::string bottomName;
 	std::array<Card, 20>* cards;
 	
-
 public:
 	CardSpace(std::string name, std::array<Player, 6>* players, int position, std::array<Card, 20>* cards);
-	void shuffleCards();
 	Card dealCard(Player thePlayer);
+
 
 };
