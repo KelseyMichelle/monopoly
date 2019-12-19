@@ -15,6 +15,4 @@ protected:
 public:
 	CardSpace(std::string name, std::array<Player, 6>& players, int position, std::array<Card, 20>& cards);
 	Card dealCard(Player thePlayer);
-
-
 };

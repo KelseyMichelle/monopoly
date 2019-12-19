@@ -9,6 +9,7 @@ protected:
 
 public:
 	Card(int cardID, std::string description);
+	Card();
 	int getCardID();
 	std::string getDescription();
 };

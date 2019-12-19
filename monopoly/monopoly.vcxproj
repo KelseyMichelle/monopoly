@@ -127,6 +127,7 @@
     <ClInclude Include="Board.h" />
     <ClInclude Include="Card.h" />
     <ClInclude Include="CardSpace.h" />
+    <ClInclude Include="CreateBoard.h" />
     <ClInclude Include="Dice.h" />
     <ClInclude Include="GetInput.h" />
     <ClInclude Include="Buyable.h" />
@@ -142,7 +143,9 @@
     <ClCompile Include="Bikepath.cpp" />
     <ClCompile Include="Board.cpp" />
     <ClCompile Include="Buyable.cpp" />
+    <ClCompile Include="Card.cpp" />
     <ClCompile Include="CardSpace.cpp" />
+    <ClCompile Include="CreateBoard.cpp" />
     <ClCompile Include="Dice.cpp" />
     <ClCompile Include="GetInput.cpp" />
     <ClCompile Include="InfoSquare.cpp" />

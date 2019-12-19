@@ -12,26 +12,12 @@ int Person::getBank()
 	return bank;
 }
 
-void Person::setBank(unsigned int newValue)
-{
-	bank = newValue;
-}
-
-int Person::addFunds(unsigned int funds)
+void Person::addToBank(int funds)
 {
 	bank += funds;
-	return bank;
 }
 
-bool Person::takeFunds(unsigned int reduction)
+void Person::subtractFromBank(int withdraw)
 {
-	try {
-		bank -= reduction;
-		return true;
-	}
-	catch (exception e)
-	{
-		return false;
-	}
-	
+	bank -= withdraw;
 }

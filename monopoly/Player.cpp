@@ -28,7 +28,6 @@ void Player::takeTurn()
 	{
 		cout << "roll dice?: ";
 
-
 	}
 	else
 	{

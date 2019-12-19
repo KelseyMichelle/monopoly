@@ -21,5 +21,3 @@ void TaxSpace::calculateTax(Player curPLayer)
 	}
 
 }
-
-	

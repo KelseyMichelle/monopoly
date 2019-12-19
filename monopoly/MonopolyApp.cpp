@@ -6,7 +6,8 @@
 #include "Board.h"
 #include "InfoSquare.h"
 #include "GetInput.h"
-
+#include "Card.h"
+#include "CreateBoard.h"
 using namespace std;
 
 int main()
@@ -27,8 +28,11 @@ int main()
 		board[x] = s2;
 	}
 	board[0] = s1;
+	array<Card, 20> cards;
+	Player banker{ "banker", "$",3,100 };
+	array<Space*, 40> squares = CreateBoard::createBoard(p1, banker, cards, cards);
 	array<array<InfoSquare, 3>, 3> infoSquares;
-	Board b1{ board, p1, infoSquares };
+	Board b1{ squares, p1, infoSquares };
 	b1.printBoard();
 	string response;
 

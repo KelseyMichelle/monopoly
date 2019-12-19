@@ -8,6 +8,11 @@ Property::Property(std::string name, std::array<Player, 6>& players, int positio
 {
 	this->treeCost = treeCost;
 	this->canopyCost = canopyCost;
+	this->rent = rent;
+	this->price = price;
+	this->group = group;
+	this->position = position;
+	
 }
 
 
