@@ -11,12 +11,6 @@ protected:
 	int numBikepaths;
 	std::string name;
 	std::array<Player, 6>* players;
-	std::string lineOne();
-	std::string lineTwo();
-	std::string lineThree();
-	std::string lineFour();
-	std::string lineFive();
-	std::string lineSix();
 	std::string topName;
 	std::string bottomName;
 	bool isMortgaged;
@@ -24,7 +18,7 @@ protected:
 	Player owner;
 
 public:
-	Bikepath(std::string name, std::array<Player, 6>& players, int position, int price, bool isMortgaged, int rent, Player& owner, int group);
+	Bikepath(std::string name, std::array<Player, 6>& players, int position, int price, bool isMortgaged, int rent, Player& owner, int group, int groupSize);
 	int getRent() override;
 	int getNumBikepaths();
 	void setNumBikePaths(int newNum);
