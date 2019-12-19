@@ -1,5 +1,6 @@
 #include "Player.h"
 #include <iostream>
+#include "Space.h"
 //spaghetti
 
 using namespace std;

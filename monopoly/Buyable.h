@@ -14,8 +14,7 @@ protected:
 	std::string bottomName;
 	bool isMortgaged = false;
 	bool allGroup = false;
-	Player owner;
-	
+	Player* owner;
 
 public:
 	Buyable(std::string name, std::array<Player, 6>& players, int position, int price, bool isMortgaged, int rent, Player& owner, int group, int groupSize);
@@ -27,7 +26,7 @@ public:
 	int getPrice();
 	virtual int getRent();
 	bool getIsMortgaged();
-	Player getPlayer();
+	Player* getPlayer();
 	int getGroup();
 	bool setAllGroup();
 	void mortgageProperty();

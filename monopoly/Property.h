@@ -19,7 +19,7 @@ protected:
 	bool isMortgaged;
 	bool allGroup;
 	Player owner;
-
+	int type = 1;
 public:
 	Property(std::string name, std::array<Player, 6>& players, int position, int price, bool isMortgaged, int rent, Player& owner, int group, int groupSize, int treeCost, int canopyCost);
 	int getRent() override;

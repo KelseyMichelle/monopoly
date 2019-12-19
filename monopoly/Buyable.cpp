@@ -6,7 +6,7 @@ Buyable::Buyable(std::string name, std::array<Player, 6>& players, int position,
 	this->price = price;
 	this->isMortgaged = isMortgaged;
 	this->rent = rent;
-	this->owner = owner;
+	this->owner = &owner;
 	this->group = group;
 
 }
@@ -18,7 +18,7 @@ void Buyable::setPrice(int newPrice)
 
 void Buyable::setOwner(Player& newOwner)
 {
-	this->owner = newOwner;
+	this->owner = &newOwner;
 }
 
 void Buyable::setIsMortgaged(bool TF)
@@ -51,7 +51,7 @@ bool Buyable::getIsMortgaged()
 	return isMortgaged;
 }
 
-Player Buyable::getPlayer()
+Player* Buyable::getPlayer()
 {
 	return owner;
 }
@@ -69,7 +69,7 @@ bool Buyable::setAllGroup()
 void Buyable::mortgageProperty()
 {
 	int mortgageFunds = this->price / 2;
-	this->owner.addToBank(mortgageFunds);
+	(*owner).addToBank(mortgageFunds);
 	this->isMortgaged = true;
 }
 
@@ -81,7 +81,7 @@ void Buyable::buyProperty(Player newOwner)
 	else
 	{
 		this->setOwner(newOwner);
-		owner.subtractFromBank(price);
+		(*owner).subtractFromBank(price);
 	}
 }
 
@@ -89,7 +89,7 @@ void Buyable::liftMortgage()
 {
 	int interest = (int)price * .1;
 	int liftMortgageAmt = (price / 2) + interest;
-	owner.subtractFromBank(liftMortgageAmt);
+	(*owner).subtractFromBank(liftMortgageAmt);
 }
 
 

@@ -1,12 +1,9 @@
 #pragma once
+
 #include <string>
 #include <vector>
 #include <array>
 #include "Person.h"
-
-#ifndef PLAYER_H
-#define PLAYER_H
-
 
 class Player : public Person
 {
@@ -37,5 +34,3 @@ public:
 	void setIsBankrupt(bool TF);
 	bool getIsBankrupt();
 };
-
-#endif

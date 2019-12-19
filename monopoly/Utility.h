@@ -15,7 +15,7 @@ protected:
 	bool isMortgaged;
 	bool allGroup;
 	Player owner;
-
+	int type = 3;
 public:
 	Utility(std::string name, std::array<Player, 6>& players, int position, int price, bool isMortgaged, int rent, Player& owner, int group, int groupSize);
 	int getRent(int dieRoll);

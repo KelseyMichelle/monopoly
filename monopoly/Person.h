@@ -1,8 +1,6 @@
 #pragma once
 #include <string>
 
-#ifndef PERSON_H
-#define PERSON_H
 
 class Person
 {
@@ -16,5 +14,3 @@ public:
 	int addFunds(unsigned int); // returns new balance
 	bool takeFunds(unsigned int); // returns true if enough money to cover the change in funds
 };
-
-#endif

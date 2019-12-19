@@ -83,3 +83,15 @@ string GetInput::getString(std::string query, std::vector<std::string> options)
 	}
 	return response;
 }
+
+bool GetInput::getYesNo(std::string query)
+{
+	if (GetInput::getString(query, { "y", "n" }) == "y")
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}

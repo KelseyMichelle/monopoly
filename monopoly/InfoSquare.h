@@ -1,7 +1,6 @@
 #pragma once
 
-#ifndef INFOSQUARE_H
-#define INFOSQUARE_H
+
 #include <string>
 
 class InfoSquare {
@@ -15,4 +14,3 @@ private:
 	
 };
 
-#endif

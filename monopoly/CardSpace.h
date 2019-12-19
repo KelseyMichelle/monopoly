@@ -11,7 +11,7 @@ protected:
 	std::string topName;
 	std::string bottomName;
 	std::array<Card, 20>* cards;
-	
+	int type = 4;
 public:
 	CardSpace(std::string name, std::array<Player, 6>& players, int position, std::array<Card, 20>& cards);
 	Card dealCard(Player thePlayer);
