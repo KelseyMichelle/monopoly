@@ -8,6 +8,9 @@
 #include "GetInput.h"
 #include "Card.h"
 #include "CreateBoard.h"
+#include "Player.h"
+#include "TheGame.h"
+
 using namespace std;
 
 int main()
@@ -15,10 +18,7 @@ int main()
 	Dice d6{};
 	array<Player, 6> p1;
 	
-	Player newP{ "kels", "%" ,3, 100};
-	Player newP2{ "charlz", "*" , 2, 100};
-	p1[0] = newP;
-	p1[2] = newP2;
+	
 	Space s1{"hubertsssssss sdfasdfsfsdfasdfsffsa", p1, 0};
 	array<Space, 40> board;
 	for (int x{ 0 }; x < 40;x++)
@@ -29,11 +29,20 @@ int main()
 	}
 	board[0] = s1;
 	array<Card, 20> cards;
-	Player banker{ "banker", "$",3,100 };
+	array<string, 40> pants{};
+	Player banker{ "banker", "$",3,100, pants };
 	array<Space*, 40> squares = CreateBoard::createBoard(p1, banker, cards, cards);
+	
 	array<array<InfoSquare, 3>, 3> infoSquares;
 	Board b1{ squares, p1, infoSquares };
+
+	Player newP{ "kels", "%" ,3, 100, b1.getNames() };
+	Player newP2{ "charlz", "*" , 2, 100, b1.getNames() };
+	p1[0] = newP;
+	p1[2] = newP2;
+	p1[0].takeTurn();
 	b1.printBoard();
+	
 	string response;
 
 	while (response != "q")

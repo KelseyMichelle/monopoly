@@ -13,6 +13,7 @@ public:
 	Space();
 	std::string getLine(int line);
 	virtual void action(Player& player);
+	std::string getName();
 protected:
 	int position;
 	std::string name;

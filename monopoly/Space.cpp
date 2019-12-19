@@ -57,6 +57,11 @@ void Space::action(Player& player)
 	cout << "no actions have been designated for this space yet";
 }
 
+std::string Space::getName()
+{
+	return name;
+}
+
 std::string Space::lineOne()
 {
 	return "---------";

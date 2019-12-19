@@ -31,6 +31,6 @@ public:
 	int getGroup();
 	bool setAllGroup();
 	void mortgageProperty();
-	void buyProperty(Player newOwner);
+	void buyProperty(Player& newOwner);
 	void liftMortgage();
 };

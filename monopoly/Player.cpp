@@ -1,16 +1,22 @@
 #include "Player.h"
+#include "GetInput.h"
+#include "Dice.h"
 #include <iostream>
+#include "Space.h"
+#include "Board.h"
+#include "TheGame.h"
 //spaghetti
 
 using namespace std;
 
 //create player object
-Player::Player(std::string name, std::string icon,int position, unsigned int balance) : Person(name, balance)
+Player::Player(std::string name, std::string icon,int position, unsigned int balance, array<string, 40> propertyNames) : Person(name, balance)
 {
 	this->name = name;
 	this->icon = icon;
 	this->position = position;
 	defaultSpace = false;
+	this->propertyNames = propertyNames;
 }
 //default constructor
 Player::Player() : Person ("default", 5000)
@@ -18,6 +24,7 @@ Player::Player() : Person ("default", 5000)
 	this->icon = "*";
 	this->position = 0;
 	this->defaultSpace = true;
+	this->position = 0;
 }
 //go through turn
 void Player::takeTurn()
@@ -26,7 +33,45 @@ void Player::takeTurn()
 	string dice;
 	if (!inJail)
 	{
-		cout << "roll dice?: ";
+		int rollCount{ 0 };
+		int d1;
+		int d2;
+		do
+		{
+			rollCount++;
+			d1 =Dice::rollDie();
+			d2 = Dice::rollDie();
+			cout << d1 << " + " << d2 << " = " << (d1 + d2) << endl;
+
+			
+		} while (d1 == d2 && rollCount != 3);
+		if (rollCount == 3)
+		{
+			putInJail();
+		}
+		else
+		{
+			cout << "Options:"
+				<< "declare -  Declare bankrupty" << endl
+				<< "owned - see properties" << endl
+				<< "end - end turn" << endl;
+			string choice = GetInput::getString("what would you like to do?: ", { "declare", "owned", "end" });
+			if (choice == "declare")
+			{
+				this->declareBankruptcy();
+			}
+			else if (choice == "owned")
+			{
+				for (int i{ 0 }; i < 40; i++)
+				{
+					if (properties[i] != 0)
+					{
+						cout << propertyNames[i] << endl;
+					}
+				}
+			}
+			
+		}
 
 	}
 	else
@@ -38,12 +83,64 @@ void Player::takeTurn()
 
 void Player::putInJail()
 {
-
+	position = 10;
+	inJail = true;
 }
-
+int Player::moveForward(unsigned int toMove)
+{
+	position += toMove;
+	if (position >= 40)
+	{
+		bank += 200;
+		cout << "you've passed go and collected $200!" << endl;
+		position -= 40;
+	}
+	return position;
+}
 bool Player::tryEscapeJail()
 {
+	if (inJail)
+	{
+		if (turnsInJail >= 3)
+		{
+			cout << "the badget got bored and decided to start harassing others - you've escaped... for now" << endl;
+			inJail = false;
+		}
+		else
+		{
+			string choice = GetInput::getString("Would you like to bribe the badger with $50 or try to escape? (bribe/escape)", { "bribe", "escape" });
+			if (choice == "escape")
+			{
+				int dieCount{ 0 };
+				bool fail = false;
+				int d1;
+				int d2;
+				while (dieCount < 3 && !fail)
+				{
+					dieCount++;
+					d1 = Dice::rollDie();
+					d2 = Dice::rollDie();
+					if (d1 == d2)
+					{
+						dieCount++;
+					}
+					else
+					{
+						fail = true;
+						return false;
+					}
+				}
+				if (!fail)
+				{
+					inJail = false;
+					cout << "you have escaped the badger!";
+					return true;
+				}
+			}
+		}
+	}
 	return false;
+	
 }
 
 int Player::getPosition()
