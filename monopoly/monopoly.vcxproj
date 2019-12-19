@@ -135,6 +135,7 @@
     <ClInclude Include="Property.h" />
     <ClInclude Include="Space.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="TaxSpace.h" />
     <ClInclude Include="Utility.h" />
   </ItemGroup>
   <ItemGroup>
@@ -150,6 +151,7 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Property.cpp" />
     <ClCompile Include="Space.cpp" />
+    <ClCompile Include="TaxSpace.cpp" />
     <ClCompile Include="Utility.cpp" />
   </ItemGroup>
   <ItemGroup>
