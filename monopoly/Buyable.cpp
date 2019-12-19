@@ -1,7 +1,7 @@
 #include "Buyable.h"
 
-Buyable::Buyable(std::string name, std::array<Player, 6>& players, int position, int price, bool isMortgaged, int rent, Player& owner, int group, int groupSize)
-	: Space(name, players, position) 
+Buyable::Buyable(std::string topName, std::string bottomName, std::array<Player, 6>& players, int position, int price, bool isMortgaged, int rent, Player& owner, int group, int groupSize)
+	: Space(topName, bottomName, players, position) 
 {
 	this->price = price;
 	this->isMortgaged = isMortgaged;

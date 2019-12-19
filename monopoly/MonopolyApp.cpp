@@ -19,7 +19,7 @@ int main()
 	Player newP2{ "charlz", "*" , 2, 100};
 	p1[0] = newP;
 	p1[2] = newP2;
-	Space s1{"hubertsssssss sdfasdfsfsdfasdfsffsa", p1, 0};
+	/*Space s1{"hubertsssssss sdfasdfsfsdfasdfsffsa", p1, 0};
 	array<Space, 40> board;
 	for (int x{ 0 }; x < 40;x++)
 	{
@@ -27,7 +27,7 @@ int main()
 
 		board[x] = s2;
 	}
-	board[0] = s1;
+	board[0] = s1;*/
 	array<Card, 20> cards;
 	Player banker{ "banker", "$",3,100 };
 	array<Space*, 40> squares = CreateBoard::createBoard(p1, banker, cards, cards);
