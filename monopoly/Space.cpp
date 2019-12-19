@@ -4,12 +4,12 @@
 
 using namespace std;
 
-Space::Space(string name, array<Player, 6>* players, int position)
+Space::Space(string name, array<Player, 6>& players, int position)
 {
 	this->position = position;
 	this->name = name;
 	this->setNames(name);
-	this->players = players;
+	this->players = &players;
 }
 
 Space::Space()

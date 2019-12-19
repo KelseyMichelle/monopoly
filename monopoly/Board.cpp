@@ -4,11 +4,11 @@
 
 using namespace std;
 
-Board::Board(std::array<Space, 40>* spaces, std::array<Player, 6>* playersPtr, std::array<std::array<InfoSquare, 3>, 3>* infoSquarePtr)
+Board::Board(std::array<Space, 40>& spaces, std::array<Player, 6>& players, std::array<std::array<InfoSquare, 3>, 3>& infoSquare)
 {
-	this->spacesPtr = spaces;
-	this->playerPtr = playersPtr;
-	this->infoSquarePtr = infoSquarePtr;
+	this->spacesPtr = &spaces;
+	this->playerPtr = &players;
+	this->infoSquarePtr = &infoSquare;
 }
 
 void Board::printBoard()

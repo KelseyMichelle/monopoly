@@ -10,10 +10,10 @@ using namespace std;
 default_random_engine engine{ static_cast<unsigned int>(time(0)) };
 uniform_int_distribution <unsigned int> randomInt{ 1, 20 };
 
-CardSpace::CardSpace(std::string name, std::array<Player, 6>* players, int position, std::array<Card, 20>* cards)
+CardSpace::CardSpace(std::string name, std::array<Player, 6>& players, int position, std::array<Card, 20>& cards)
 : Space(name, players, position) 
 {
-	this->cards = cards;
+	this->cards = &cards;
 }
 
 Card CardSpace::dealCard(Player thePlayer)
@@ -27,5 +27,5 @@ Card CardSpace::dealCard(Player thePlayer)
 			int drawnCard = randomInt(engine);
 		}
 	}
-	return cards[drawnCard];
+	return (*cards)[drawnCard];
 }

@@ -13,23 +13,21 @@ int main()
 {
 	Dice d6{};
 	array<Player, 6> p1;
-	array<Player, 6>* p1Ptr = &p1;
 	
 	Player newP{ "kels", "%" ,3};
 	Player newP2{ "charlz", "*" , 2};
 	p1[0] = newP;
-	Space s1{"hubertsssssss sdfasdfsfsdfasdfsffsa", p1Ptr, 0};
+	Space s1{"hubertsssssss sdfasdfsfsdfasdfsffsa", p1, 0};
 	array<Space, 40> board;
 	for (int x{ 0 }; x < 40;x++)
 	{
-		Space s2{ "space num" + to_string(x), p1Ptr, x };
+		Space s2{ "space num" + to_string(x), p1, x };
 
 		board[x] = s2;
 	}
 	board[0] = s1;
 	array<array<InfoSquare, 3>, 3> infoSquares;
-	array<array<InfoSquare, 3>, 3>* infoPtr = &infoSquares;
-	Board b1{ &board, &p1, infoPtr };
+	Board b1{ board, p1, infoSquares };
 	b1.printBoard();
 	string response;
 
