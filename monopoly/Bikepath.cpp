@@ -1,6 +1,6 @@
 #include "Bikepath.h"
 
-Bikepath::Bikepath(std::string topName, std::string bottomName, std::array<Player, 6>& players, int position, int price, bool isMortgaged, int rent, Player& owner, int group, int groupSize)
+Bikepath::Bikepath(std::string topName, std::string bottomName, std::array<Player*, 6>& players, int position, int price, bool isMortgaged, int rent, Player& owner, int group, int groupSize)
 :Buyable(topName, bottomName, players, position, price, isMortgaged, rent, owner, group, groupSize) {}
 
 int Bikepath::getRent()

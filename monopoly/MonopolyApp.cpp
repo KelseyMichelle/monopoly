@@ -16,7 +16,7 @@ using namespace std;
 int main()
 {
 	Dice d6{};
-	array<Player, 6> p1;
+	array<Player*, 6> p1;
 	
 
 	/*Space s1{"hubertsssssss sdfasdfsfsdfasdfsffsa", p1, 0};
@@ -35,30 +35,37 @@ int main()
 	
 	array<array<InfoSquare, 3>, 3> infoSquares;
 	Board b1{ squares, p1, infoSquares };
+	int numPlayers = GetInput::getInt("How many players will play? (1-6) ", 1, 6);
+	int startingCash = GetInput::getInt("How much should each have in starting cash? (0-5000): ", 0 , 5000);
+	array<Player, 6> players;
+	for (int i{ 0 }; i < numPlayers; i++)
+	{
+		string name = GetInput::getString("Player " + to_string(i) + "name: ");
+		string icon = GetInput::getString("Player " + to_string(i) + "icon (@ # % ^ & * ? < > + =): ", { "@","#","%","^","&","*","?","<",">","+","=" });
+		Player p {name, icon, 0, startingCash, b1.getNames()};
+		players[i] = p;
+	}
+	for (int i{ 0 }; i < 6; i++)
+	{
+		p1[i] = &players[i];
+	}
 
-	Player newP{ "kels", "%" ,3, 100, b1.getNames() };
-	Player newP2{ "charlz", "*" , 2, 100, b1.getNames() };
-	p1[0] = newP;
-	p1[2] = newP2;
-	p1[0].takeTurn();
 	b1.printBoard();
 	
 	string response;
 
 	while (response != "q")
 	{
-		cout << "what do you wanna do? (f/b): ";
-		cin >> response;
-		if (response == "f")
+		for (Player*& p : p1)
 		{
-			p1[0].setPos(p1[0].getPos() + 1);
-		} else if (response == "b")
-		{
-			p1[0].setPos(p1[0].getPos() - 1);
+			if (!p->isDefault())
+			{
+				(*p).takeTurn();
+				squares[(*p).getPosition()]->action(*p);
+
+				b1.printBoard();
+			}
 		}
-		cout << "\033[2J\033[1;1H";
-		system("CLS");
-		b1.printBoard();
 	}
 
 }

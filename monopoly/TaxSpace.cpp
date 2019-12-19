@@ -2,7 +2,7 @@
 
 using namespace std;
 
-TaxSpace::TaxSpace(std::string topName, std::string bottomName, std::array<Player, 6>& players, int position)
+TaxSpace::TaxSpace(std::string topName, std::string bottomName, std::array<Player*, 6>& players, int position)
 : Space(topName, bottomName, players, position){}
 
 void TaxSpace::calculateTax(Player curPLayer)
